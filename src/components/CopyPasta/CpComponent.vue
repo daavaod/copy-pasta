@@ -6,9 +6,9 @@
         <div>
             Text in clipboard: {{ copiedText }}
         </div>
-        <div>
+        <!-- <div>
            cpDataLocal: {{ cpDataLocal }}
-        </div>
+        </div> -->
         <div>
             <button @click.prevent="handleCreate">Create new item</button>
         </div>
