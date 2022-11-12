@@ -1,8 +1,11 @@
 <template>
     <li>
-        <button @click.prevent="handleCopy">Copy</button>
-        <textarea name="" id="" cols="30" rows="10" v-model="inputText.text" @change="handleOnChange"></textarea>
-        <button @click.prevent="handleDelete">Delete</button>
+        <button @click.prevent="handleCopy" class="normal">Copy</button>
+        <div class="text-area-wrap">
+            <label>{{ inputText.title ? inputText.title : 'Title' }}</label>
+            <textarea name="" id="" cols="10" rows="1" v-model="inputText.text" @change="handleOnChange"></textarea>
+        </div>
+        <button @click.prevent="handleDelete" class="danger">Remove</button>
     </li>
 </template>
 
@@ -41,6 +44,6 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
     
 </style>

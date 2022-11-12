@@ -1,11 +1,8 @@
 <template>
-    <div class="cp-generate-overlay">
+    <div class="cp-generate-overlay" v-if="activate">
         <div class="cp-generate-container">
-            <ul>
-                <li><h3>Create Item</h3></li>
-                <li><input type="text" v-model="text"></li>
-                <li><button @click="handleCreate">Create</button></li>
-            </ul>
+            <h3>Enter input title</h3>
+            <slot name="input"></slot>
         </div>
     </div>
 </template>
@@ -14,20 +11,21 @@
 export default {
   name: "CpGenerate",
   props: {
-    
+    activate: {
+        type: Boolean,
+        default: false
+    }
   },
   data() {
     return {
-        text: ''
+        
     }
   },
   computed: {
     
   },
   methods: {
-    handleCreate() {
-
-    }
+    
   },
   created() {
     
@@ -43,6 +41,7 @@ export default {
         width: 100%;
         height: 100%;
         z-index: 2;
+        background-color: rgba(33, 33, 33, 0.3);
     }
     .cp-generate-container {
         background-color: white;
