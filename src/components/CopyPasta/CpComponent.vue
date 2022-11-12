@@ -43,7 +43,6 @@ export default {
             this.copiedText = val;
         },
         handleEmitDelete(val) {
-            console.log('should delete item', val)
             let getLS = JSON.parse(localStorage.getItem('cpData'));
 
             let removeItem = getLS.filter(item => {
@@ -62,14 +61,10 @@ export default {
             return Math.floor(Math.random() * 10000);
         },
         handleUpdate(id, text) {
-            console.log('should update numer', id);
-            console.log('should update new text', text);
-
             let getLS = JSON.parse(localStorage.getItem('cpData'));
 
             let updateItem = getLS.map(item => {
                 if(item.id === id) {
-                    console.log('should update item ', item);
                     let newItem = {
                         id: item.id,
                         text: text
@@ -101,7 +96,6 @@ export default {
         },
         setLocalStorage(value) {
             let getCurrent = this.getCpLocalStorage();
-            console.log('getCurrent', getCurrent);
 
             localStorage.setItem('cpData', JSON.stringify())
         },
@@ -109,10 +103,8 @@ export default {
             let cpDataLocal = localStorage.getItem('cpData');
 
             if(cpDataLocal) {
-                console.log('should GET items')
                 this.cpDataLocal = JSON.parse(cpDataLocal);
             } else {
-                console.log('should SET items')
 
                 let payload = [{
                     id: this.generateId(),
